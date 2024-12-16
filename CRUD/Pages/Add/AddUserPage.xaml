@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD.Pages.Add.AddUserPage"
+             xmlns:vm="clr-namespace:CRUD.Pages.Add"
+             Title="Add User">
+
+    <ContentPage.BindingContext>
+        <vm:AddUserPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <!-- Back Arrow -->
+        <ToolbarItem Text="Back"
+                     IconImageSource="back_arrow.png"
+                     Priority="0"
+                     Order="Primary"
+                     Command="{Binding NavigateBackCommand}" />
+    </ContentPage.ToolbarItems>
+    <VerticalStackLayout Padding="10" Spacing="20">
+        <!-- Add Person Form -->
+        <Label Text="Add New Person" FontSize="18" HorizontalOptions="Center" />
+
+        <Entry Placeholder="Enter First Name" 
+               Text="{Binding NewUser.firstname}" />
+
+        <Entry Placeholder="Enter Last Name" 
+               Text="{Binding NewUser.lastname}" />
+        <Entry Placeholder="Enter email" 
+          Text="{Binding NewUser.email}" />
+        <Entry Placeholder="Enter Phone Number" 
+   Text="{Binding NewUser.phone}" />
+        <Button Text="Add Person" Command="{Binding AddPersonCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

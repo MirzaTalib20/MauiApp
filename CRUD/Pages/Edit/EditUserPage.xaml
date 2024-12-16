@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD.Pages.Edit.EditUserPage"
+             xmlns:vm="clr-namespace:CRUD.Pages.Edit"
+             Title="Edit User">
+
+
+    <VerticalStackLayout Padding="10">
+        <Label Text="Edit User" FontSize="18" HorizontalOptions="Center" />
+
+        <Entry Placeholder="First Name"
+               Text="{Binding SelectedUser.firstname}" />
+
+        <Entry Placeholder="Last Name"
+               Text="{Binding SelectedUser.lastname}" />
+        <Entry Placeholder="Last Name"
+        Text="{Binding SelectedUser.email}" />
+
+        <Button Text="Save" Command="{Binding SaveUserCommand}" />
+    </VerticalStackLayout>
+</ContentPage>
